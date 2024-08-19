@@ -1,7 +1,6 @@
-import { Result } from "../common/result";
 
 
-export interface Usuarios extends Result<Usuarios> {
+export interface Usuarios {
     login:             string;
     pass:              string;
     activo:            boolean;

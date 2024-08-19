@@ -19,10 +19,10 @@ export const useUsuarios = () => {
         setIsloading(true);
         const fetchDataUseCase = new GetUserByIdUseCase(new UsuariosRepositoryImplementation());
         const fetchAllUserUseCase = new GetAllUsersUseCase(new UsuariosRepositoryImplementation());
-        //const result = await fetchDataUseCase.execute(1);
+        const result = await fetchDataUseCase.execute(1);
         const resultAll = await fetchAllUserUseCase.execute();
-        //setUsuario(result);
-        setUsuarios(resultAll);
+        setUsuario(result);
+        setUsuarios(resultAll.sort((a, b) => a.usuario - b.usuario));
 
         setIsloading(false);
     }
